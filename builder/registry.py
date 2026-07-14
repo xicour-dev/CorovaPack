@@ -96,6 +96,7 @@ class VanillaGlowAsset:
     name: str  # snake_case vanilla item id, e.g. "diamond_sword"
     base_item: str  # e.g. "minecraft:diamond_sword"
     glow_texture_path: Path
+    extra_glows: dict[str, Path] = field(default_factory=dict)  # e.g. {"pulling_0": Path}
 
     @property
     def glow_model_id(self) -> str:
@@ -104,6 +105,12 @@ class VanillaGlowAsset:
     @property
     def glow_texture_id(self) -> str:
         return f"{NAMESPACE}:item/vanilla/{self.name}_glow"
+
+    def extra_glow_model_id(self, suffix: str) -> str:
+        return f"{NAMESPACE}:item/vanilla/{self.name}_glow_{suffix}"
+
+    def extra_glow_texture_id(self, suffix: str) -> str:
+        return f"{NAMESPACE}:item/vanilla/{self.name}_glow_{suffix}"
 
 
 @dataclass(frozen=True)
@@ -259,10 +266,17 @@ class RegistryScanner:
                 self.logger.warn(f"duplicate vanilla_glow entry for {base_item} -- keeping first")
                 continue
 
+            extra_glows = {}
+            for sub_entry in entry.iterdir():
+                if sub_entry.is_file() and sub_entry.name.startswith("glow_") and sub_entry.suffix.lower() == ".png":
+                    suffix = sub_entry.stem[5:]  # strip 'glow_'
+                    extra_glows[suffix] = sub_entry
+
             assets[base_item] = VanillaGlowAsset(
                 name=name,
                 base_item=base_item,
                 glow_texture_path=glow_path,
+                extra_glows=extra_glows,
             )
         return assets
 

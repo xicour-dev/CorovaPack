@@ -94,8 +94,29 @@ def _vanilla_base_model(base_item: str) -> dict:
     }
 
 
+def _bow_glow_model_for(vanilla_glow: VanillaGlowAsset, suffix: str | None) -> str:
+    if suffix and suffix in vanilla_glow.extra_glows:
+        return vanilla_glow.extra_glow_model_id(suffix)
+    return vanilla_glow.glow_model_id
+
+
+def _bow_composite(vanilla_glow: VanillaGlowAsset, suffix: str | None) -> dict:
+    base_model_name = f"minecraft:item/bow_{suffix}" if suffix else "minecraft:item/bow"
+    glow_model_id = _bow_glow_model_for(vanilla_glow, suffix)
+    return {
+        "type": "minecraft:composite",
+        "models": [
+            {
+                "type": "minecraft:model",
+                "model": base_model_name
+            },
+            *_mutation_overlay_entries(glow_model_id)
+        ]
+    }
+
+
 def _bow_fallback_model(vanilla_glow: VanillaGlowAsset) -> dict:
-    bow_base_model = {
+    return {
         "type": "minecraft:condition",
         "property": "minecraft:using_item",
         "on_true": {
@@ -105,53 +126,52 @@ def _bow_fallback_model(vanilla_glow: VanillaGlowAsset) -> dict:
             "entries": [
                 {
                     "threshold": 0.65,
-                    "model": {
-                        "type": "minecraft:model",
-                        "model": "minecraft:item/bow_pulling_1"
-                    }
+                    "model": _bow_composite(vanilla_glow, "pulling_1")
                 },
                 {
                     "threshold": 0.9,
-                    "model": {
-                        "type": "minecraft:model",
-                        "model": "minecraft:item/bow_pulling_2"
-                    }
+                    "model": _bow_composite(vanilla_glow, "pulling_2")
                 }
             ],
-            "fallback": {
-                "type": "minecraft:model",
-                "model": "minecraft:item/bow_pulling_0"
-            }
+            "fallback": _bow_composite(vanilla_glow, "pulling_0")
         },
-        "on_false": {
-            "type": "minecraft:model",
-            "model": "minecraft:item/bow"
-        }
+        "on_false": _bow_composite(vanilla_glow, None)
     }
+
+
+def _crossbow_glow_model_for(vanilla_glow: VanillaGlowAsset, suffix: str | None) -> str:
+    if suffix and suffix in vanilla_glow.extra_glows:
+        return vanilla_glow.extra_glow_model_id(suffix)
+    return vanilla_glow.glow_model_id
+
+
+def _crossbow_composite(vanilla_glow: VanillaGlowAsset, suffix: str | None) -> dict:
+    base_model_name = f"minecraft:item/crossbow_{suffix}" if suffix else "minecraft:item/crossbow"
+    glow_model_id = _crossbow_glow_model_for(vanilla_glow, suffix)
     return {
         "type": "minecraft:composite",
-        "models": [bow_base_model, *_mutation_overlay_entries(vanilla_glow.glow_model_id)],
+        "models": [
+            {
+                "type": "minecraft:model",
+                "model": base_model_name
+            },
+            *_mutation_overlay_entries(glow_model_id)
+        ]
     }
 
 
 def _crossbow_fallback_model(vanilla_glow: VanillaGlowAsset) -> dict:
-    crossbow_base_model = {
+    return {
         "type": "minecraft:select",
         "property": "minecraft:charge_type",
         "cases": [
             {
                 "when": "arrow",
-                "model": {
-                    "type": "minecraft:model",
-                    "model": "minecraft:item/crossbow_arrow"
-                }
+                "model": _crossbow_composite(vanilla_glow, "arrow")
             },
             {
                 "when": "rocket",
-                "model": {
-                    "type": "minecraft:model",
-                    "model": "minecraft:item/crossbow_firework"
-                }
+                "model": _crossbow_composite(vanilla_glow, "firework")
             }
         ],
         "fallback": {
@@ -163,33 +183,17 @@ def _crossbow_fallback_model(vanilla_glow: VanillaGlowAsset) -> dict:
                 "entries": [
                     {
                         "threshold": 0.58,
-                        "model": {
-                            "type": "minecraft:model",
-                            "model": "minecraft:item/crossbow_pulling_1"
-                        }
+                        "model": _crossbow_composite(vanilla_glow, "pulling_1")
                     },
                     {
                         "threshold": 1.0,
-                        "model": {
-                            "type": "minecraft:model",
-                            "model": "minecraft:item/crossbow_pulling_2"
-                        }
+                        "model": _crossbow_composite(vanilla_glow, "pulling_2")
                     }
                 ],
-                "fallback": {
-                    "type": "minecraft:model",
-                    "model": "minecraft:item/crossbow_pulling_0"
-                }
+                "fallback": _crossbow_composite(vanilla_glow, "pulling_0")
             },
-            "on_false": {
-                "type": "minecraft:model",
-                "model": "minecraft:item/crossbow"
-            }
+            "on_false": _crossbow_composite(vanilla_glow, None)
         }
-    }
-    return {
-        "type": "minecraft:composite",
-        "models": [crossbow_base_model, *_mutation_overlay_entries(vanilla_glow.glow_model_id)],
     }
 
 

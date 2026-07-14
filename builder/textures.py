@@ -48,6 +48,11 @@ class TextureCompiler:
             util.copy_file(vanilla_glow.glow_texture_path, dest)
             count += 1
 
+            for suffix, path in vanilla_glow.extra_glows.items():
+                extra_dest = self.paths.textures_dir / "item" / "vanilla" / f"{vanilla_glow.name}_glow_{suffix}.png"
+                util.copy_file(path, extra_dest)
+                count += 1
+
         for dest_folder, raw_assets in registry.raw_textures.items():
             for asset in raw_assets:
                 dest = self.paths.textures_dir / dest_folder / asset.relative_path

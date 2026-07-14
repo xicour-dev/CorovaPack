@@ -97,5 +97,16 @@ class ModelGenerator:
             util.write_json(dest, glow_model_json)
             count += 1
 
+            for suffix in vanilla_glow.extra_glows:
+                extra_glow_model_json = {
+                    "parent": f"minecraft:item/{vanilla_glow.name}_{suffix}",
+                    "textures": {
+                        "layer0": vanilla_glow.extra_glow_texture_id(suffix),
+                    },
+                }
+                extra_dest = self.paths.models_dir / "vanilla" / f"{vanilla_glow.name}_glow_{suffix}.json"
+                util.write_json(extra_dest, extra_glow_model_json)
+                count += 1
+
         self.logger.info(f"{count} model JSON file(s) generated")
         return count
