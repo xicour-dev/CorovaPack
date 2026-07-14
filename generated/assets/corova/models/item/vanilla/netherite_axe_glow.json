@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/netherite_axe",
+  "textures": {
+    "layer0": "corova:item/vanilla/netherite_axe_glow"
+  }
+}

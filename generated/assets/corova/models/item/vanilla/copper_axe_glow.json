@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/copper_axe",
+  "textures": {
+    "layer0": "corova:item/vanilla/copper_axe_glow"
+  }
+}

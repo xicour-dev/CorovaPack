@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/copper_sword",
+  "textures": {
+    "layer0": "corova:item/vanilla/copper_sword_glow"
+  }
+}

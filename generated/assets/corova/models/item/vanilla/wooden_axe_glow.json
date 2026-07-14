@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/wooden_axe",
+  "textures": {
+    "layer0": "corova:item/vanilla/wooden_axe_glow"
+  }
+}

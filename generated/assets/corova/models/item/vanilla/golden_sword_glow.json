@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/golden_sword",
+  "textures": {
+    "layer0": "corova:item/vanilla/golden_sword_glow"
+  }
+}

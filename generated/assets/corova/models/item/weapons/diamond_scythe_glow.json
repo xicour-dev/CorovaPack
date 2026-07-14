@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "corova:item/weapons/diamond_scythe_glow"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        -4,
+        -90,
+        0
+      ],
+      "translation": [
+        0,
+        5.5,
+        5.75
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "corova:item/vanilla/bow_glow"
+  }
+}

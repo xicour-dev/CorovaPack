@@ -1,0 +1,20 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:custom_model_data",
+    "index": 0,
+    "cases": [
+      {
+        "when": "corova:armor/chestplate",
+        "model": {
+          "type": "minecraft:model",
+          "model": "corova:item/armor/chestplate"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/leather_chestplate"
+    }
+  }
+}

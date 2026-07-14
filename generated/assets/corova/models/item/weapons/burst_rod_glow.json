@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "corova:item/weapons/burst_rod_glow"
+  }
+}

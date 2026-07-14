@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/copper_pickaxe",
+  "textures": {
+    "layer0": "corova:item/vanilla/copper_pickaxe_glow"
+  }
+}

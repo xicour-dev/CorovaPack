@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/wooden_pickaxe",
+  "textures": {
+    "layer0": "corova:item/vanilla/wooden_pickaxe_glow"
+  }
+}
