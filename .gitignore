@@ -1,0 +1,6 @@
+CorovaAssets/generated/
+CorovaAssets/output/
+CorovaAssets/builder/__pycache__/
+CorovaAssets/CorovaItems/target/
+**/__pycache__/
+*.class

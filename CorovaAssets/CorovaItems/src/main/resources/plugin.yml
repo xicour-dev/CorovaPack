@@ -1,0 +1,4 @@
+name: WifeBeater
+version: '1.0.0'
+main: com.example.corovaItems.Weapons.WifeBeater
+api-version: '1.21'
