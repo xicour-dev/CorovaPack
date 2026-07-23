@@ -1,0 +1,34 @@
+{
+    "targets": {
+        "swap": {}
+    },
+    "passes": [
+        {
+            "program": "minecraft:nausea",
+            "inputs": [
+                {
+                    "sampler_name": "InSampler",
+                    "target": "minecraft:main",
+                    "bilinear": true
+                }
+            ],
+            "output": "swap",
+            "uniforms": [
+                {
+                    "name": "Progress",
+                    "values": [ 0.0 ]
+                }
+            ]
+        },
+        {
+            "program": "minecraft:blit",
+            "inputs": [
+                {
+                    "sampler_name": "InSampler",
+                    "target": "swap"
+                }
+            ],
+            "output": "minecraft:main"
+        }
+    ]
+}

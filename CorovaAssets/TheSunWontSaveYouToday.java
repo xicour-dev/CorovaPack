@@ -198,8 +198,12 @@ public class TheSunWontSaveYouToday implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player p = event.getPlayer();
-        if (p.getWorld().equals(this.world) && this.active) {
-            applyEffect(p);
+        if (p.getWorld().equals(this.world)) {
+            if (this.active) {
+                applyEffect(p);
+            } else {
+                removeEffect(p);
+            }
         }
     }
 
