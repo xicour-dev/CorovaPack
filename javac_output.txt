@@ -1,0 +1,236 @@
+CorovaAssets/TheSunWontSaveYouToday.java:8: error: cannot find symbol
+import com.example.corovaEvents.CorovaEvents;
+                               ^
+  symbol:   class CorovaEvents
+  location: package com.example.corovaEvents
+CorovaAssets/TheSunWontSaveYouToday.java:9: error: cannot find symbol
+import com.example.corovaEvents.DiscordBridge;
+                               ^
+  symbol:   class DiscordBridge
+  location: package com.example.corovaEvents
+CorovaAssets/TheSunWontSaveYouToday.java:10: error: cannot find symbol
+import com.example.corovaEvents.SpawnModifierManager;
+                               ^
+  symbol:   class SpawnModifierManager
+  location: package com.example.corovaEvents
+CorovaAssets/TheSunWontSaveYouToday.java:11: error: package org.bukkit does not exist
+import org.bukkit.Sound;
+                 ^
+CorovaAssets/TheSunWontSaveYouToday.java:12: error: package org.bukkit does not exist
+import org.bukkit.World;
+                 ^
+CorovaAssets/TheSunWontSaveYouToday.java:13: error: package org.bukkit.entity does not exist
+import org.bukkit.entity.Player;
+                        ^
+CorovaAssets/TheSunWontSaveYouToday.java:14: error: package org.bukkit.event does not exist
+import org.bukkit.event.EventHandler;
+                       ^
+CorovaAssets/TheSunWontSaveYouToday.java:15: error: package org.bukkit.event does not exist
+import org.bukkit.event.Listener;
+                       ^
+CorovaAssets/TheSunWontSaveYouToday.java:16: error: package org.bukkit.event.player does not exist
+import org.bukkit.event.player.PlayerJoinEvent;
+                              ^
+CorovaAssets/TheSunWontSaveYouToday.java:17: error: package org.bukkit.event.player does not exist
+import org.bukkit.event.player.PlayerChangedWorldEvent;
+                              ^
+CorovaAssets/TheSunWontSaveYouToday.java:18: error: package org.bukkit.event.player does not exist
+import org.bukkit.event.player.PlayerRespawnEvent;
+                              ^
+CorovaAssets/TheSunWontSaveYouToday.java:19: error: package org.bukkit.potion does not exist
+import org.bukkit.potion.PotionEffect;
+                        ^
+CorovaAssets/TheSunWontSaveYouToday.java:20: error: package org.bukkit.potion does not exist
+import org.bukkit.potion.PotionEffectType;
+                        ^
+CorovaAssets/TheSunWontSaveYouToday.java:21: error: cannot find symbol
+import org.bukkit.plugin.java.JavaPlugin;
+                             ^
+  symbol:   class JavaPlugin
+  location: package org.bukkit.plugin.java
+CorovaAssets/TheSunWontSaveYouToday.java:22: error: package org.bukkit.scheduler does not exist
+import org.bukkit.scheduler.BukkitRunnable;
+                           ^
+CorovaAssets/TheSunWontSaveYouToday.java:28: error: cannot find symbol
+public class TheSunWontSaveYouToday implements Listener {
+                                               ^
+  symbol: class Listener
+CorovaAssets/TheSunWontSaveYouToday.java:29: error: cannot find symbol
+    private static final Map<World, TheSunWontSaveYouToday> worldInstances = new HashMap();
+                             ^
+  symbol:   class World
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:31: error: cannot find symbol
+    private final JavaPlugin plugin;
+                  ^
+  symbol:   class JavaPlugin
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:32: error: cannot find symbol
+    private final World world;
+                  ^
+  symbol:   class World
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:38: error: cannot find symbol
+    private BukkitRunnable dayCheckTask = null;
+            ^
+  symbol:   class BukkitRunnable
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:40: error: cannot find symbol
+    public static TheSunWontSaveYouToday getForWorld(World world) {
+                                                     ^
+  symbol:   class World
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:44: error: cannot find symbol
+    public TheSunWontSaveYouToday(JavaPlugin plugin, World world) {
+                                  ^
+  symbol:   class JavaPlugin
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:44: error: cannot find symbol
+    public TheSunWontSaveYouToday(JavaPlugin plugin, World world) {
+                                                     ^
+  symbol:   class World
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:178: error: cannot find symbol
+    public void onPlayerJoin(PlayerJoinEvent event) {
+                             ^
+  symbol:   class PlayerJoinEvent
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:186: error: cannot find symbol
+    public void onPlayerChangedWorld(PlayerChangedWorldEvent event) {
+                                     ^
+  symbol:   class PlayerChangedWorldEvent
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:198: error: cannot find symbol
+    public void onPlayerRespawn(PlayerRespawnEvent event) {
+                                ^
+  symbol:   class PlayerRespawnEvent
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:212: error: cannot find symbol
+    private void applyBloodSunVisuals(Player p) {
+                                      ^
+  symbol:   class Player
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:223: error: cannot find symbol
+    private void removeBloodSunVisuals(Player p) {
+                                       ^
+  symbol:   class Player
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:177: error: cannot find symbol
+    @EventHandler
+     ^
+  symbol:   class EventHandler
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:185: error: cannot find symbol
+    @EventHandler
+     ^
+  symbol:   class EventHandler
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:197: error: cannot find symbol
+    @EventHandler
+     ^
+  symbol:   class EventHandler
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:67: error: cannot find symbol
+        this.dayCheckTask = new BukkitRunnable() {
+                                ^
+  symbol:   class BukkitRunnable
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:79: error: cannot find symbol
+                        if (com.example.corovaEvents.CorovaEvents.getInstance().isWorldEventEnabled("sunwontsaveyou") && TheSunWontSaveYouToday.this.random.nextDouble() < 0.05) {
+                                                    ^
+  symbol:   class CorovaEvents
+  location: package com.example.corovaEvents
+CorovaAssets/TheSunWontSaveYouToday.java:126: error: cannot find symbol
+            for(Player p : this.world.getPlayers()) {
+                ^
+  symbol:   class Player
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:128: error: cannot find symbol
+                p.playSound(p.getLocation(), Sound.ENTITY_WITHER_AMBIENT, 1.5F, 0.5F);
+                                             ^
+  symbol:   variable Sound
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:132: error: cannot find symbol
+            DiscordBridge.sendToDiscord(message);
+            ^
+  symbol:   variable DiscordBridge
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:135: error: cannot find symbol
+            SpawnModifierManager.getInstance().setSunWontSaveActive(this.world, true);
+            ^
+  symbol:   variable SpawnModifierManager
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:136: error: cannot find symbol
+            double mult = CorovaEvents.getInstance().getEventsConfig().getDouble("sun_wont_save_you.spawn_multiplier", (double)1.5F) * 2.0;
+                          ^
+  symbol:   variable CorovaEvents
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:137: error: cannot find symbol
+            SpawnModifierManager.getInstance().setGlobalSpawnRateMultiplier(this.world, mult);
+            ^
+  symbol:   variable SpawnModifierManager
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:139: error: cannot find symbol
+            for(String mob : CorovaEvents.getInstance().getEventsConfig().getStringList("sun_wont_save_you.forced_mobs")) {
+                             ^
+  symbol:   variable CorovaEvents
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:140: error: cannot find symbol
+                SpawnModifierManager.getInstance().addForcedMob(this.world, mob);
+                ^
+  symbol:   variable SpawnModifierManager
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:149: error: cannot find symbol
+                SpawnModifierManager.getInstance().reset(this.world);
+                ^
+  symbol:   variable SpawnModifierManager
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:150: error: cannot find symbol
+                for (Player p : this.world.getPlayers()) {
+                     ^
+  symbol:   class Player
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:173: error: package org.bukkit.event does not exist
+        org.bukkit.event.HandlerList.unregisterAll(this);
+                        ^
+CorovaAssets/TheSunWontSaveYouToday.java:179: error: cannot find symbol
+        Player p = event.getPlayer();
+        ^
+  symbol:   class Player
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:187: error: cannot find symbol
+        Player p = event.getPlayer();
+        ^
+  symbol:   class Player
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:199: error: cannot find symbol
+        Player p = event.getPlayer();
+        ^
+  symbol:   class Player
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:201: error: cannot find symbol
+            new BukkitRunnable() {
+                ^
+  symbol:   class BukkitRunnable
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:202: error: method does not override or implement a method from a supertype
+                @Override
+                ^
+CorovaAssets/TheSunWontSaveYouToday.java:213: error: cannot find symbol
+        p.addPotionEffect(new PotionEffect(
+                              ^
+  symbol:   class PotionEffect
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:214: error: cannot find symbol
+            PotionEffectType.NAUSEA,
+            ^
+  symbol:   variable PotionEffectType
+  location: class TheSunWontSaveYouToday
+CorovaAssets/TheSunWontSaveYouToday.java:224: error: cannot find symbol
+        p.removePotionEffect(PotionEffectType.NAUSEA);
+                             ^
+  symbol:   variable PotionEffectType
+  location: class TheSunWontSaveYouToday
+Note: CorovaAssets/TheSunWontSaveYouToday.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+52 errors

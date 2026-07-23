@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class TheSunWontSaveYouToday implements Listener {
-    private static final Map<World, TheSunWontSaveYouToday> worldInstances = new HashMap();
+    private static final Map<World, TheSunWontSaveYouToday> worldInstances = new HashMap<>();
     private static final double CHANCE_PER_DAY = 0.05;
     private final JavaPlugin plugin;
     private final World world;
@@ -38,11 +38,11 @@ public class TheSunWontSaveYouToday implements Listener {
     private BukkitRunnable dayCheckTask = null;
 
     public static TheSunWontSaveYouToday getForWorld(World world) {
-        return (TheSunWontSaveYouToday)worldInstances.get(world);
+        return worldInstances.get(world);
     }
 
     public TheSunWontSaveYouToday(JavaPlugin plugin, World world) {
-        TheSunWontSaveYouToday existing = (TheSunWontSaveYouToday)worldInstances.get(world);
+        TheSunWontSaveYouToday existing = worldInstances.get(world);
         if (existing != null) {
             existing.cleanup();
         }
