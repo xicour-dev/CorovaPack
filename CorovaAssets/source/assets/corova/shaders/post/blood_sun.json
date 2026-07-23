@@ -1,0 +1,10 @@
+{
+  "vertex": "corova:post/blood_sun",
+  "fragment": "corova:post/blood_sun",
+  "samplers": [
+    { "name": "In" }
+  ],
+  "uniforms": [
+    { "name": "ProjMat", "type": "matrix4x4", "count": 16, "values": [ 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 ] }
+  ]
+}
