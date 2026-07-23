@@ -4,7 +4,7 @@
   },
   "passes": [
     {
-      "program": "corova:post/blood_sun",
+      "program": "minecraft:post/nausea",
       "inputs": [
         {
           "sampler_name": "In",

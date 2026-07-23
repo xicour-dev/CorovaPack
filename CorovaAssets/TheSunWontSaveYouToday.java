@@ -16,6 +16,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -208,16 +210,17 @@ public class TheSunWontSaveYouToday implements Listener {
     }
 
     private void applyBloodSunVisuals(Player p) {
-        this.plugin.getServer().dispatchCommand(
-            this.plugin.getServer().getConsoleSender(),
-            "posteffect add " + p.getName() + " corova:blood_sun"
-        );
+        p.addPotionEffect(new PotionEffect(
+            PotionEffectType.NAUSEA,
+            24000, // Safe duration for full-day event
+            0,
+            true,  // ambient (no beacon bubbles)
+            false, // particles (completely invisible)
+            false  // icon (no potion HUD icons)
+        ));
     }
 
     private void removeBloodSunVisuals(Player p) {
-        this.plugin.getServer().dispatchCommand(
-            this.plugin.getServer().getConsoleSender(),
-            "posteffect clear " + p.getName()
-        );
+        p.removePotionEffect(PotionEffectType.NAUSEA);
     }
 }

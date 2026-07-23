@@ -1,6 +1,6 @@
 {
-  "vertex": "corova:post/blood_sun",
-  "fragment": "corova:post/blood_sun",
+  "vertex": "minecraft:post/nausea",
+  "fragment": "minecraft:post/nausea",
   "samplers": [
     { "name": "In" }
   ],
