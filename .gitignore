@@ -1,0 +1,12 @@
+CorovaItems/
+generated/
+__pycache__/
+*.pyc
+.gradle/
+build/
+unrar
+scan_output.txt
+py_out.txt
+build_log.txt
+recolor_log.txt
+branch.txt

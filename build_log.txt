@@ -1,0 +1,44 @@
+
+== Building CorovaPack ==
+[ 1] Cleaning previous build output
+[ 2] Recreating build directories
+[ 3] Scanning source assets
+     ! WARNING: weapons/_shared has no texture.png -- skipped
+     - 19 item asset(s), 0 raw texture(s), 0 sound(s), 0 font asset(s)
+[ 4] Copying textures
+     - Stitched 20 lightning frames into /app/generated/assets/corova/textures/item/weapons/_shared/lightning/lightning.png at 20 FPS
+     - 119 texture file(s) copied
+[ 5] Generating item model JSON files
+     - 168 model JSON file(s) generated
+[ 6] Generating item definition files
+     - 32 item definition file(s) generated (19 custom item(s) total, 17 vanilla-only glow-overlay item(s)) under assets/<base item namespace>/items/
+[ 7] Copying sounds and generating sounds.json
+     - no sound files found -- skipping sounds.json
+[ 8] GUI assets copied
+     - 0 GUI asset file(s)
+[ 9] Copying fonts
+     - no font assets found -- skipping
+[10] Generating language files
+     - 1 language file(s) generated (19 auto key(s))
+[11] Generating Java helper classes
+     - 3 Java helper class(es) generated
+[12] Writing pack.mcmeta and pack.png
+     - pack.mcmeta written (min_format 88, max_format 999)
+     ! WARNING: no source/pack.png found -- pack will ship without an icon
+[13] Building CorovaPack.zip
+     - CorovaPack.zip built (197,788 bytes)
+[14] Calculating SHA1
+     - SHA1: 777bab17a074b78c84af94d0cd3979d373896a94
+
+== Build Summary ==
+  Items generated   : 19
+    - armor      1
+    - weapons    18
+  Sounds copied     : 0
+  Font assets       : 0
+  Raw textures      : 0
+  Output zip        : /app/output/CorovaPack.zip
+  SHA1              : 777bab17a074b78c84af94d0cd3979d373896a94
+  Time              : 0.68s
+
+Build complete.
