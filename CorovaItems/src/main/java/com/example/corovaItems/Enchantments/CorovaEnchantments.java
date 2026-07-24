@@ -4,7 +4,6 @@ import com.example.corovaItems.Enchantments.EnchantBooks.*;
 import com.example.corovaItems.Enchantments.GreaterEnchantmentSystem.CustomEnchantMutationFormatting;
 import com.example.corovaItems.ItemMutations.MutationManager;
 import com.example.corovaItems.ItemMutations.MutationType;
-import com.example.corovaItems.ItemMutations.MutationVisuals;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -181,9 +180,6 @@ public final class CorovaEnchantments {
         com.example.corovaItems.Enchantments.GreaterEnchantmentSystem.VanillaEnchantDisplay.refreshDisplay(stack, meta);
 
         stack.setItemMeta(meta);
-        if (MutationManager.getInstance() != null) {
-            MutationVisuals.syncVisuals(stack, MutationManager.getInstance().getMutations(stack), MutationManager.getInstance()::getMutation);
-        }
         return stack;
     }
 
@@ -267,9 +263,6 @@ public final class CorovaEnchantments {
         com.example.corovaItems.Enchantments.GreaterEnchantmentSystem.VanillaEnchantDisplay.refreshDisplay(stack, meta);
 
         stack.setItemMeta(meta);
-        if (MutationManager.getInstance() != null) {
-            MutationVisuals.syncVisuals(stack, MutationManager.getInstance().getMutations(stack), MutationManager.getInstance()::getMutation);
-        }
         return stack;
     }
 
@@ -298,9 +291,6 @@ public final class CorovaEnchantments {
             CustomEnchantMutationFormatting.rebuildLore(stack, meta);
             com.example.corovaItems.Enchantments.GreaterEnchantmentSystem.VanillaEnchantDisplay.refreshDisplay(stack, meta);
             stack.setItemMeta(meta);
-            if (MutationManager.getInstance() != null) {
-                MutationVisuals.syncVisuals(stack, MutationManager.getInstance().getMutations(stack), MutationManager.getInstance()::getMutation);
-            }
         }
         return stack;
     }

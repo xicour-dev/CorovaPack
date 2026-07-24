@@ -58,6 +58,7 @@ ITEM_CATEGORIES: tuple[str, ...] = (
     "armor",
     "materials",
     "blocks",  # item-form only for now; blockstates are a future feature
+    "mobs",
 )
 
 # Categories that are copied as raw textures with no model/item generation.
@@ -93,6 +94,7 @@ DEFAULT_BASE_ITEMS: dict[str, str] = {
     "armor": "minecraft:leather_chestplate",
     "materials": "minecraft:paper",
     "blocks": "minecraft:stone",
+    "mobs": "minecraft:paper",
 }
 
 # ---------------------------------------------------------------------------

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.example</groupId>
+    <artifactId>corova-project</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <artifactId>CorovaItems</artifactId>
+  <packaging>jar</packaging>
+  <name>CorovaItems</name>
+
+  <properties>
+    <!--
+      CorovaAssets lives in its own repo/folder, outside this Maven reactor,
+      so there's no relative path Maven can walk to find it. This property
+      points at the generated/java output from `python build.py`.
+
+      Override per-machine/CI without editing this file:
+        mvn package -Dcorova.assets.dir=D:/some/other/path/CorovaAssets
+    -->
+    <corova.assets.dir>C:/Users/xicour/Desktop/CorovaChronicles/CorovaChroniclesPack/CorovaAssets</corova.assets.dir>
+  </properties>
+
+  <build>
+    <defaultGoal>clean package</defaultGoal>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+
+      <!--
+        Adds CorovaAssets' generated/java/*.java (CorovaModels,
+        CorovaCustomModelData, CorovaBaseItems, CorovaSounds) as an extra
+        source root so they compile alongside this module's own classes.
+
+        Requires `python build.py` to have been run at least once before
+        `mvn compile` / `mvn package`, so the directory actually exists
+        with fresh constants in it.
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>add-corova-assets-generated-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${corova.assets.dir}/generated/java</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+
+  <dependencies>
+    <!-- Paper API - version and scope managed by parent -->
+    <dependency>
+      <groupId>io.papermc.paper</groupId>
+      <artifactId>paper-api</artifactId>
+    </dependency>
+
+    <!-- Dependency on CorovaGuard -->
+    <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>CorovaGuard</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- Dependency on CorovaCarts -->
+    <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>CorovaCarts</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- Dependency on CorovaEvents -->
+    <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>corovaevents</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- Dependency on CorovaTeams -->
+    <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>CorovaTeams</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <!-- ProtocolLib - provided by server at runtime -->
+    <dependency>
+      <groupId>com.comphenix.protocol</groupId>
+      <artifactId>ProtocolLib</artifactId>
+      <version>5.4.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Reflections library - inherited from parent, listed for clarity -->
+    <dependency>
+      <groupId>org.reflections</groupId>
+      <artifactId>reflections</artifactId>
+      <version>0.10.2</version>
+    </dependency>
+  </dependencies>
+
+</project>

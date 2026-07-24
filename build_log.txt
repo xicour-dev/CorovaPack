@@ -11,7 +11,7 @@
 [ 5] Generating item model JSON files
      - 168 model JSON file(s) generated
 [ 6] Generating item definition files
-     - 32 item definition file(s) generated (19 custom item(s) total, 17 vanilla-only glow-overlay item(s)) under assets/<base item namespace>/items/
+     - 33 item definition file(s) generated (19 custom item(s) total, 17 vanilla-only glow-overlay item(s)) under assets/<base item namespace>/items/
 [ 7] Copying sounds and generating sounds.json
      - no sound files found -- skipping sounds.json
 [ 8] GUI assets copied
@@ -26,19 +26,20 @@
      - pack.mcmeta written (min_format 88, max_format 999)
      ! WARNING: no source/pack.png found -- pack will ship without an icon
 [13] Building CorovaPack.zip
-     - CorovaPack.zip built (197,788 bytes)
+     - CorovaPack.zip built (198,712 bytes)
 [14] Calculating SHA1
-     - SHA1: 777bab17a074b78c84af94d0cd3979d373896a94
+     - SHA1: 8a20ade4687f37ffe014a2826e955662dcf95659
 
 == Build Summary ==
   Items generated   : 19
     - armor      1
-    - weapons    18
+    - mobs       2
+    - weapons    16
   Sounds copied     : 0
   Font assets       : 0
   Raw textures      : 0
   Output zip        : /app/output/CorovaPack.zip
-  SHA1              : 777bab17a074b78c84af94d0cd3979d373896a94
-  Time              : 0.68s
+  SHA1              : 8a20ade4687f37ffe014a2826e955662dcf95659
+  Time              : 0.60s
 
 Build complete.

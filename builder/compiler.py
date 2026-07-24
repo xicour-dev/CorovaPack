@@ -103,6 +103,13 @@ class PipelineCompiler:
         self.logger.step("Generating Java helper classes")
         JavaGenerator(self.paths, self.logger).generate(registry)
 
+        # Copy manual overrides from source/assets/ to generated/assets/ if exists
+        source_assets_dir = self.paths.source / "assets"
+        if source_assets_dir.is_dir():
+            self.logger.step("Copying manual assets overrides")
+            import shutil
+            shutil.copytree(source_assets_dir, self.paths.assets_root, dirs_exist_ok=True)
+
         # 13-14. pack.mcmeta + pack.png.
         self.logger.step("Writing pack.mcmeta and pack.png")
         pack_assembler.write_mcmeta()

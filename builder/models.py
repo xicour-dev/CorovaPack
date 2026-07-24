@@ -59,7 +59,7 @@ class ModelGenerator:
                 if "textures" in custom_model_json:
                     for tex_key, tex_val in list(custom_model_json["textures"].items()):
                         if ":" not in tex_val:
-                            custom_model_json["textures"][tex_key] = f"corova:item/weapons/{tex_val}"
+                            custom_model_json["textures"][tex_key] = f"corova:item/{item.category}/{tex_val}"
                 dest = self.paths.models_dir / item.category / f"{item.name}.json"
                 util.write_json(dest, custom_model_json)
                 count += 1
